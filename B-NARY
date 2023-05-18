@@ -1,0 +1,37 @@
+print("Hello, this is a binary converter program that converts text to binary.")
+
+while True:
+    choice= input("If you want to convert a text, you need to type" "TEXT"". If you want to convert binary, you need to type ""BINARY")
+
+
+
+    if choice == "TEXT":
+
+        def text_binarye_translate(text):
+            binary = ''.join(format(ord(c), '08b') for c in text)
+            return binary
+
+        
+        text = input("Please enter the text: ")
+
+       
+        binary_text = text_binarye_translate(text)
+
+        print("Binary: ", binary_text)
+    else:
+        def binary_text_translate(binary):
+            text = ""
+            for i in range(0, len(binary), 8):
+                byte = binary[i:i+8]
+                chracter = chr(int(byte, 2))
+                text += chracter
+            return text
+
+       
+        binary = input("Please enter the BİNARY: ")
+
+        
+        text = binary_text_translate(binary)
+
+        print("text: ", text)
+
